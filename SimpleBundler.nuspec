@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <version>1.00</version>
+        <authors>OpenTable</authors>
+        <owners>OpenTable</owners>
+        <id>SimpleBundler</id>
+        <title>SimpleBundler</title>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A simple bundling and minification framework with no dependencies to System.Web namespace (can be safely used in OWIN projects and works on Mono too)</description>
+        <copyright>Copyright OpenTable 2015</copyright>
+        <dependencies>
+		<dependency id="EcmaScript.Net" version="1.0" />
+		<dependency id="YUICompressor.NET" version="2.7" />
+        </dependencies>
+    </metadata>
+    <files>        
+        <file src="SimpleBundler\bin\Release\SimpleBundler.dll" target="lib\net45\SimpleBundler.dll" />
+        <file src="SimpleBundler\bin\release\SimpleBundler.pdb" target="lib\net45\SimpleBundler.pdb" />
+    </files>
+</package>
