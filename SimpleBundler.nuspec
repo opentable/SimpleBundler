@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <version>1.00</version>
+        <version>1.0</version>
         <authors>OpenTable</authors>
         <owners>OpenTable</owners>
         <id>SimpleBundler</id>
@@ -16,6 +16,6 @@
     </metadata>
     <files>        
         <file src="SimpleBundler\bin\Release\SimpleBundler.dll" target="lib\net45\SimpleBundler.dll" />
-        <file src="SimpleBundler\bin\release\SimpleBundler.pdb" target="lib\net45\SimpleBundler.pdb" />
+        <file src="SimpleBundler\bin\Release\SimpleBundler.pdb" target="lib\net45\SimpleBundler.pdb" />
     </files>
 </package>
