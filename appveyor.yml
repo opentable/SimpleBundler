@@ -8,4 +8,4 @@ deploy:
     secure: 34ae4cfb-c1f2-4fe6-b4df-c2bc7e59d217
   skip_symbols: false
   #symbol_server:           
-  artifact: /.*\.nupkg/
+  artifact:
