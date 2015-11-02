@@ -23,9 +23,7 @@ after_build:
   
 deploy:
   provider: NuGet
-  #server:                  # remove to push to NuGet.org
   api_key:
     secure: 34ae4cfb-c1f2-4fe6-b4df-c2bc7e59d217
-  skip_symbols: false
-  #symbol_server:           
-  artifact:
+  skip_symbols: true       
+  artifact: SimpleBundler.1.0.nupkg
