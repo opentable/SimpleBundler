@@ -57,9 +57,9 @@ namespace SimpleBundler
         private static void BuildCompressedJavaScript(JavaScriptPack pack)
         {
             const string compressedTemplate = "<script src=\"/bundles/js/{0}?r={1}\"></script>";
-            var contents = PackerUtils.GetCompressedContents(pack.Files, pack.BasePath, new JsCompressor());
+            var contents = Utils.GetCompressedContents(pack.Files, pack.BasePath, new JsCompressor());
             CompressedJavaScriptContentsInternal.Add(pack.Name, contents);
-            var contentHash = PackerUtils.GetSignature(contents);
+            var contentHash = Utils.GetSignature(contents);
             CompressedJavaScriptTagsInternal.Add(pack.Name, string.Format(compressedTemplate, pack.Name, contentHash));
         }
     }

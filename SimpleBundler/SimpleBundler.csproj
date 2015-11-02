@@ -56,7 +56,7 @@
     <Compile Include="Pack.cs" />
     <Compile Include="JavaScriptPack.cs" />
     <Compile Include="CssPack.cs" />
-    <Compile Include="PackerUtils.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

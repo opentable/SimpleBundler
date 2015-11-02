@@ -56,9 +56,9 @@ namespace SimpleBundler
         private static void BuildCompressedCss(CssPack pack)
         {
             const string compressedTemplate = "<link rel=\"stylesheet\" type=\"text/css\" href=\"/bundles/css/{0}?r={1}\" />";
-            var contents = PackerUtils.GetCompressedContents(pack.Files, pack.BasePath, new StyleSheetCompressor());
+            var contents = Utils.GetCompressedContents(pack.Files, pack.BasePath, new StyleSheetCompressor());
             CompressedCssContentsInternal.Add(pack.Name, contents);
-            var contentHash = PackerUtils.GetSignature(contents);
+            var contentHash = Utils.GetSignature(contents);
             CompressedCssTagsInternal.Add(pack.Name, string.Format(compressedTemplate, pack.Name, contentHash));
         }
     }

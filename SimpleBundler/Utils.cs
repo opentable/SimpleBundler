@@ -10,7 +10,7 @@ using SimpleBundler.Compressor;
 
 namespace SimpleBundler
 {
-    public static class PackerUtils
+    internal static class Utils
     {
         public static string GetSignature(string content)
         {
