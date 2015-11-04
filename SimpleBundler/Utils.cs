@@ -29,7 +29,7 @@ namespace SimpleBundler
             {
                 var file = fileList[index];
                 var filePathName = Path.Combine(basePath, file);
-                var fileContents = File.ReadAllText(filePathName);
+                var fileContents = File.ReadAllText(filePathName, Encoding.UTF8);
                 try
                 {
                     fileContents = compressor.Compress(fileContents);
