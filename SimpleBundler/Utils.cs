@@ -3,15 +3,19 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using log4net;
 using SimpleBundler.Compressor;
 
 namespace SimpleBundler
 {
     internal static class Utils
     {
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         public static string GetSignature(string content)
         {
             using (var md5 = MD5.Create())
@@ -36,8 +40,7 @@ namespace SimpleBundler
                 }
                 catch (Exception)
                 {
-                    // TODO: supply a logger here
-                    Console.WriteLine("Error during compression (using uncompressed file) - " + file);
+                    Log.Warn("Error during compression (using uncompressed file) - " + file);
                 }
 
                 tempLookup[index] = fileContents;
