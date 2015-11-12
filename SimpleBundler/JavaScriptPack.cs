@@ -2,6 +2,12 @@
 
 namespace SimpleBundler
 {
+    public enum CacheBustingMethod
+    {
+        Path = 0,
+        QueryString = 1
+    }
+
     public class JavaScriptPack
     {
         private readonly List<string> _files = new List<string>();
@@ -19,6 +25,18 @@ namespace SimpleBundler
         }
 
         public bool SkipBundling
+        {
+            get;
+            set;
+        }
+
+        public CacheBustingMethod CacheBustingMethod
+        {
+            get;
+            set;
+        }
+
+        public string CacheBustingString
         {
             get;
             set;

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using SimpleBundler.Compressor;
 
 namespace SimpleBundler
@@ -56,11 +57,26 @@ namespace SimpleBundler
 
         private static void BuildCompressedJavaScript(JavaScriptPack pack)
         {
-            const string compressedTemplate = "<script src=\"/bundles/js/{0}?r={1}\"></script>";
             var contents = Utils.GetCompressedContents(pack.Files, pack.BasePath, new JsCompressor());
             CompressedJavaScriptContentsInternal.Add(pack.Name, contents);
-            var contentHash = Utils.GetSignature(contents);
-            CompressedJavaScriptTagsInternal.Add(pack.Name, string.Format(compressedTemplate, pack.Name, contentHash));
+
+            if (string.IsNullOrWhiteSpace(pack.CacheBustingString))
+            {
+                pack.CacheBustingString = Utils.GetSignature(contents);
+            }
+
+            switch (pack.CacheBustingMethod)
+            {
+                case CacheBustingMethod.Path:
+                    var compressedTemplate = "<script src=\"/bundles/js/{0}/{1}\"></script>";
+                    CompressedJavaScriptTagsInternal.Add(pack.Name, string.Format(compressedTemplate, pack.CacheBustingString, pack.Name));
+                    break;
+
+                default:
+                    compressedTemplate = "<script src=\"/bundles/js/{0}?r={1}\"></script>";
+                    CompressedJavaScriptTagsInternal.Add(pack.Name, string.Format(compressedTemplate, pack.Name, pack.CacheBustingString));
+                    break;
+            }
         }
     }
 }

@@ -24,6 +24,18 @@ namespace SimpleBundler
             set;
         }
 
+        public CacheBustingMethod CacheBustingMethod
+        {
+            get;
+            set;
+        }
+
+        public string CacheBustingString
+        {
+            get;
+            set;
+        }
+
         public IEnumerable<string> Files
         {
             get
