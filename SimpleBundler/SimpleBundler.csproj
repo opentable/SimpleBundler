@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CacheBustingMethod.cs" />
     <Compile Include="Compressor\StyleSheetCompressor.cs" />
     <Compile Include="Compressor\ICompressor.cs" />
     <Compile Include="Compressor\JsCompressor.cs" />

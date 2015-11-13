@@ -65,7 +65,7 @@ namespace SimpleBundler
 
             switch (pack.CacheBustingMethod)
             {
-                case CacheBustingMethod.Path:
+                case CacheBustingMethod.VaryByUrlPath:
                     var compressedTemplate = "<link rel=\"stylesheet\" type=\"text/css\" href=\"/bundles/css/{0}/{1}\" />";
                     CompressedCssTagsInternal.Add(pack.Name, string.Format(compressedTemplate, pack.CacheBustingString, pack.Name));
                     break;

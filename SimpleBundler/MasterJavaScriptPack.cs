@@ -67,7 +67,7 @@ namespace SimpleBundler
 
             switch (pack.CacheBustingMethod)
             {
-                case CacheBustingMethod.Path:
+                case CacheBustingMethod.VaryByUrlPath:
                     var compressedTemplate = "<script src=\"/bundles/js/{0}/{1}\"></script>";
                     CompressedJavaScriptTagsInternal.Add(pack.Name, string.Format(compressedTemplate, pack.CacheBustingString, pack.Name));
                     break;
