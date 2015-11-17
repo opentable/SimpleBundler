@@ -58,7 +58,7 @@ Using WebAPI, this would look like -
 
 ```csharp
 [HttpGet]
-[Route("bundles/css/{versionTag}/{bundleName}]
+[Route("bundles/css/{versionTag}/{bundleName}")]
 public HttpResponseMessage GetCssBundle(string versionTag, string bundleName)
 {
 	return Pack.Css().RenderContents
