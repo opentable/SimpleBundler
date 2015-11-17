@@ -43,6 +43,7 @@ After the bundling set up is done, you need to add endpoints to your code which 
 By default, 
 
 Bundle requests for css are made to /bundles/css/<hash-tag>/{nameOfBundle}
+
 Bundle requests for javascript are made to /bundles/js/<hash-tag>/{nameOfBundle}
 
 
