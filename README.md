@@ -6,8 +6,6 @@ A simple bundling and minification framework with no dependencies to System.Web 
 SimpleBundler
 =============
 
-[![Join the chat at https://gitter.im/mj1856/TimeZoneNames](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mj1856/TimeZoneNames?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 A simple bundling and minification framework with no dependencies to System.Web namespace (can be safely used in OWIN projects)
 
 Why?  Because .NET's built in bundling/minification framework has a dependency with System.Web. It cannot be used in OWIN style self host projects. 
