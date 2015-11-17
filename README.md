@@ -42,9 +42,9 @@ After the bundling set up is done, you need to add endpoints to your code which 
 
 By default, 
 
-Bundle requests for css are made to /bundles/css/<hash-tag>/nameOfBundle
+Bundle requests for css are made to /bundles/css/{hash-tag>}/nameOfBundle
 
-Bundle requests for javascript are made to /bundles/js/<hash-tag>/nameOfBundle
+Bundle requests for javascript are made to /bundles/js/{hash-tag>}/nameOfBundle
 
 
 Using NancyFX, this would look like - 
@@ -71,13 +71,13 @@ Using Cache Busting String in "Url Path" vs "Query string"
 By default the cache busting string is used in the Url Path. This behavior can be changed so that the string is added as a query string. 
 
 ```csharp
-jsPack.CacheBustingMethod = CacheBustingMethod.VaryByQueryString; // makes bundle request to /bundles/js/homePageJS?r=<cache-busting-string>
+jsPack.CacheBustingMethod = CacheBustingMethod.VaryByQueryString; // makes bundle request to /bundles/js/homePageJS?r={cache-busting-string}
 jsPack.CacheBustingString = "build-number"; // if you don't pass the build-number, it will use the hash of css contents as cache busting string.
 
 ```
 
 ```csharp
-jsPack.CacheBustingMethod = CacheBustingMethod.VaryByUrlPath; // makes bundle request to /bundles/js/<cache-busting-string>/homePageJS
+jsPack.CacheBustingMethod = CacheBustingMethod.VaryByUrlPath; // makes bundle request to /bundles/js/{cache-busting-string}/homePageJS
 jsPack.CacheBustingString = "build-number"; // if you don't pass the build-number, it will use the hash of css contents as cache busting string.
 ```
 
